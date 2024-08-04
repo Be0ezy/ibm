@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def make_graph(stock_data):
+  # Assuming stock_data is a pandas DataFrame with 'Date' and 'Close' columns
+  plt.figure(figsize=(12, 6))
+  plt.plot(stock_data['Date'], stock_data['Close'])
+  plt.title('Tesla Stock Price')
+  plt.xlabel('Date')
+  plt.ylabel('Stock Price')
+  plt.grid(True)
+  plt.show()
+
+# Replace 'tesla_data' with your actual data
+tesla_data = pd.read_csv('tesla_stock_data.csv')  # Assuming CSV format
+
+make_graph(tesla_data)
