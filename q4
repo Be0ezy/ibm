@@ -1,0 +1,34 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+def get_gme_revenue(url):
+  """
+  Scrapes GME revenue data from the given URL.
+
+  Args:
+    url: The URL of the webpage containing the GME revenue data.
+
+  Returns:
+    A pandas DataFrame containing the scraped data.
+  """
+
+  # Send a GET request to the URL
+  response = requests.get(url)
+  soup = BeautifulSoup(response.content, 'html.parser')
+
+  # Extract revenue data (replace with actual extraction logic based on HTML structure)
+  revenue_data = []
+  # ... Your scraping logic here ...
+
+  # Create a pandas DataFrame
+  gme_revenue = pd.DataFrame(revenue_data, columns=['Date', 'Revenue'])
+
+  return gme_revenue
+
+# Replace 'https://example.com/gme-revenue' with the actual URL
+url = 'https://example.com/gme-revenue'
+gme_revenue = get_gme_revenue(url)
+
+# Display the last five rows
+print(gme_revenue.tail())
